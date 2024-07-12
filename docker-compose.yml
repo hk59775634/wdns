@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  dns-server:
+    image: hk59775634/wdns:latest
+    environment:
+      - NODE_CODE=ShangHai-test-01
+      - API_KEY=55f06cb29fd65804e74e657282bd2b4b
+      - API_URL=https://dns.hnsmmg.com/api/dns_node/domainList
+      - DNS_SERVERS=8.8.4.4,1.1.1.1,1.0.0.1,9.9.9.9,149.112.112.112 #,208.67.222.222,208.67.220.220
+      - SAFE_DNS_SERVERS=94.140.14.15,94.140.15.16,156.154.70.3,156.154.71.3,1.1.1.3
+      - CN_DNS_SERVERS=114.114.114.110,114.114.115.110,114.114.114.119,114.114.115.119,223.5.5.5,223.6.6.6,119.29.29.29,119.28.28.28,182.254.116.116,182.254.118.118,117.50.11.11,117.50.10.10,117.50.60.30,52.80.66.66,52.80.52.52,52.80.60.30,180.184.1.1,180.184.2.2
+      - CACHE=1 # 0: disable, 1: enable
+    ports:
+      - "53:53/udp"
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "dig @127.0.0.1 google.com > /dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
