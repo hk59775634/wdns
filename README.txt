@@ -1,4 +1,4 @@
-https://dns.hninpop.com/guwVKkXqxI.php    
+https://dns.hnsmmg.com/guwVKkXqxI.php    
 账号： admin
 密码： a123456
 
