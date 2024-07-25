@@ -1,6 +1,5 @@
 https://dns.hnsmmg.com/guwVKkXqxI.php    
-账号： admin
-密码： a123456
+
 
 
 我想要为内部用户提供DNS服务。通过dns白名单管理系统的api来获取白名单列表。
